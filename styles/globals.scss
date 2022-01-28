@@ -1,3 +1,14 @@
+:root {
+  --font-color: #333;
+  --background-color: #eee;
+  --link-color: cornflowerblue;
+}
+
+[data-theme="dark"] {
+  color: #eee;
+  background: linear-gradient(to bottom, #4e54c8, #8f94fb);;
+}
+
 html,
 body {
   padding: 0;
@@ -5,8 +16,6 @@ body {
 }
 
 body {
-  background: linear-gradient(to bottom, #4e54c8, #8f94fb);
-  color: #fff;
   font-size: 20px;
   font-family: 'Montserrat', sans-serif;
 }
