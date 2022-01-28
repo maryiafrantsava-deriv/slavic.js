@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { useRouter } from "next/router";
 import Link from "next/Link";
 import Image from 'next/image';
@@ -9,7 +10,7 @@ const navigation = [
     { id: 3, title: 'About VCard', path: '/about_vcard' },
   ];
 
-const Navbar = () => {
+const Navbar:FC = () => {
     const {pathname} = useRouter();
     return (
         <nav className={styles.nav}>
