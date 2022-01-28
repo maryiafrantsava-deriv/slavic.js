@@ -1,5 +1,6 @@
+import { FC } from "react";
 import { useRouter } from "next/router";
-import Link from "next/Link";
+import Link from "next/link";
 import Image from 'next/image';
 import styles from '../styles/Navbar.module.scss';
 
@@ -9,7 +10,7 @@ const navigation = [
     { id: 3, title: 'About VCard', path: '/about_vcard' },
   ];
 
-const Navbar = () => {
+const Navbar:FC = () => {
     const {pathname} = useRouter();
     return (
         <nav className={styles.nav}>
@@ -19,7 +20,7 @@ const Navbar = () => {
             <div className={styles.links}>
                 {navigation.map(({id, title, path}) => (
                     <Link key={id} href={path}>
-                      <a className={pathname === path ? styles.active : null}>{title}</a>
+                      <a className={pathname === path ? styles.active : ''}>{title}</a>
                     </Link>  
                 ))}
             </div>
