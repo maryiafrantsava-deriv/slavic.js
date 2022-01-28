@@ -4,20 +4,12 @@ import { values_form_qr } from "../../utils/values_form_qr";
 import Button from "../common/Button";
 import { initialValuesRegister } from "./SchemaFormQR";
 import styles from "./FormQR.module.scss";
-import qrCode from '../../dist/QrCode';
+import QRCodeRender from '../QrCodeRender';
 
-type TFormQR = {
-    setRegister: Function;
-    setInputListText: Function;
-};
-
-const FormQR: React.FC<TFormQR> = React.memo(({
-    setRegister,
-    setInputListText,
-}) => {
+const FormQR: React.FC = React.memo(() => {
 
     const [dataQRcode, setDataQRcode] = useState({});
-    const [QRCode, setQRCode] = useState(false);
+    const [isQRCodeReady, setQRCode] = useState(false);
 
     useEffect(() => {
         const _register_data = localStorage.getItem("register_data");
@@ -108,10 +100,12 @@ const FormQR: React.FC<TFormQR> = React.memo(({
                     </div>
                 </Form>
             </Formik>
-            <div id="qr">
-                {QRCode ? qrCode.createVCardQr(dataQRcode, {typeNumber: 25, cellSize: 2}) : null}
-                </div>
-            <pre id="vcard"></pre>
+            {isQRCodeReady ? (
+                <QRCodeRender
+                    dataQRcode={dataQRcode}
+                />
+                ): null
+            }
         </>
     );
 });
