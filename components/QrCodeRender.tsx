@@ -7,7 +7,7 @@ type TDataQRcode = {
 
 const QRCodeRender = ({dataQRcode}: TDataQRcode) => (
     <>
-        <div dangerouslySetInnerHTML={{__html: qrCode.createVCardQr(dataQRcode, {typeNumber: 4, cellSize: 6})}}>
+        <div dangerouslySetInnerHTML={{__html: qrCode.createVCardQr(dataQRcode, {typeNumber: 5, cellSize: 8})}}>
         </div>
         <div dangerouslySetInnerHTML={{__html: qrCode.createVCard(dataQRcode)}}>
         </div>
