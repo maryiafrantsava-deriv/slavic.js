@@ -4,10 +4,9 @@ import { values_form_qr } from "../../utils/values_form_qr";
 import Button from "../common/Button";
 import { initialValuesRegister } from "./SchemaFormQR";
 import styles from "./FormQR.module.scss";
-import QRCodeRender from '../QrCodeRender';
+import QRCodeRender from "../QrCodeRender";
 
 const FormQR: React.FC = React.memo(() => {
-
     const [dataQRcode, setDataQRcode] = useState({});
     const [isQRCodeReady, setQRCode] = useState(false);
 
