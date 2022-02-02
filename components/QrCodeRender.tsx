@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import qrCode from '../utils/QrCode';
 import {TInitialValuesRegister} from '../components/FormQR/SchemaFormQR';
 import QRSizeContext from "../context/Context";

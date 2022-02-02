@@ -29,6 +29,8 @@ const SizeSelect: FC = () => {
                 setExampleSize(8)
                 break;
             default:
+                setDemoSize(180)
+                setExampleSize(4)
                 break;
         }
     }
