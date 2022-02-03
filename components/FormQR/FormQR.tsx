@@ -5,6 +5,7 @@ import Button from "../common/Button";
 import { initialValuesRegister } from "./SchemaFormQR";
 import styles from "./FormQR.module.scss";
 import QRCodeRender from '../QrCodeRender';
+import DemoBanner from "../DemoBanner";
 
 const FormQR: React.FC = React.memo(() => {
 
@@ -100,6 +101,7 @@ const FormQR: React.FC = React.memo(() => {
                     </div>
                 </Form>
             </Formik>
+            <DemoBanner/>
             {isQRCodeReady ? (
                 <QRCodeRender
                     dataQRcode={dataQRcode}
