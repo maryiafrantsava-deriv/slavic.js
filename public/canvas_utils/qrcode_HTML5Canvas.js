@@ -693,12 +693,12 @@ an.handleFilterCache = function(event) {
 		}
 	}
 }
-let canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+let canvas, stage, exportRoot, anim_container, overlay_container, fnStartAnimation;
 
 	(function() {
 		canvas = document.getElementById("canvas");
 		anim_container = document.getElementById("animation_container");
-		dom_overlay_container = document.getElementById("dom_overlay_container");
+		overlay_container = document.getElementById("overlay_container");
 		const comp=AdobeAn.getComposition("8C99FDDA396B42C4AE615FC0B7DBE3AB");
 		const lib=comp.getLibrary();
 		const loader = new createjs.LoadQueue(false);
@@ -722,7 +722,7 @@ let canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAni
 			for(i=0; i<ssMetadata.length; i++) {
 				ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
 			}
-			const preloaderDiv = document.getElementById("_preload_div_");
+			const preloaderDiv = document.getElementById("preloader-container");
 			preloaderDiv.style.display = 'none';
 			canvas.style.display = 'block';
 			exportRoot = new lib.qrcode_HTML5Canvas();
@@ -735,7 +735,7 @@ let canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAni
 				createjs.Ticker.addEventListener("tick", stage);
 			}	    
 
-			AdobeAn.makeResponsive(false,'both',false,1,[canvas,preloaderDiv,anim_container,dom_overlay_container]);	
+			AdobeAn.makeResponsive(false,'both',false,1,[canvas,preloaderDiv,anim_container,overlay_container]);	
 			AdobeAn.compositionLoaded(lib.properties.id);
 			fnStartAnimation();
 		}
