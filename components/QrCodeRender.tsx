@@ -1,14 +1,14 @@
 import { useContext } from 'react';
 import qrCode from '../utils/QrCode';
-import {TInitialValuesRegister} from '../components/FormQR/SchemaFormQR';
-import QRSizeContext from "../context/Context";
+import { TInitialValuesRegister } from '../components/FormQR/SchemaFormQR';
+import QRContext from "../context/QRContext";
 
 type TDataQRcode = {
     dataQRcode: TInitialValuesRegister | any;
 }
 
 const QRCodeRender = ({dataQRcode}: TDataQRcode) => {
-    const { example_size } = useContext(QRSizeContext);
+    const { example_size } = useContext(QRContext);
 
     return (
         <>
