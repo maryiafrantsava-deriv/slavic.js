@@ -1,0 +1,44 @@
+.banner-container{
+    margin:0px;
+
+    .animation_container{
+        background-color:rgba(0, 0, 0, 1.00); 
+        width: 550px; 
+        height: 400px;
+
+        .banner_canvas{
+            position: absolute;
+            display: none; 
+            background-color:rgba(0, 0, 0, 1.00);
+        }
+
+        .dom_overlay_container{
+            pointer-events:none; 
+            overflow:hidden; 
+            width:550px; 
+            height:400px; 
+            position: absolute; 
+            left: 0px; 
+            top: 0px; 
+            display: none;
+        }
+    }
+    ._preload_div_{
+        position: relative;
+        top: 10rem; 
+        height:400px; 
+        width: 550px; 
+        text-align: center;
+
+        &_span{
+            display: inline-block; 
+            height: 100%; 
+            vertical-align: middle;
+        }
+
+        &_preloader{
+            vertical-align: middle; 
+            max-height: 100%;
+        }
+    }
+}
