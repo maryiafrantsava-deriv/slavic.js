@@ -8,6 +8,7 @@ import QRCodeRender from "../QrCodeRender";
 import AddContext from "../../context/AddContext";
 import { req_fields_number } from "../../utils/values_form_qr";
 import FormInput from "./FormInput";
+import DemoBanner from "../DemoBanner";
 
 const FormQR: React.FC = React.memo(() => {
     const [dataQRcode, setDataQRcode] = useState({});
@@ -83,6 +84,7 @@ const FormQR: React.FC = React.memo(() => {
                     </div>
                 </Form>
             </Formik>
+            <DemoBanner/>
             {isQRCodeReady ? (
                 <QRCodeRender
                     dataQRcode={dataQRcode}
