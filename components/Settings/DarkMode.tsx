@@ -1,5 +1,5 @@
-import styles from '../styles/DarkMode.module.scss';
-import { MouseEventHandler, useState, useEffect } from 'react';
+import styles from '../../styles/DarkMode.module.scss';
+import { MouseEventHandler } from 'react';
 
 const DarkMode = () => {
     const getDefaultChecked = () => {

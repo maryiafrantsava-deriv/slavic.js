@@ -8,7 +8,6 @@ import QRCodeRender from '../QrCodeRender';
 import DemoBanner from "../DemoBanner";
 
 const FormQR: React.FC = React.memo(() => {
-
     const [dataQRcode, setDataQRcode] = useState({});
     const [isQRCodeReady, setQRCode] = useState(false);
 

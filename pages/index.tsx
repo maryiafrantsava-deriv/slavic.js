@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useState, FC } from 'react';
 import Form from '../components/FormQR/FormQR';
 import styles from '../styles/VCard.module.scss';
 
