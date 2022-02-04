@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { init_aditional_checked } from "../utils/values_form_qr"
 
 interface IAddContext {
   additional_fields: Array<boolean>;
@@ -6,7 +7,7 @@ interface IAddContext {
 }
 
 const initialValues = {
-  additional_fields : [false, false, false, false, false],
+  additional_fields : init_aditional_checked,
   setAdditionalFields: (data: Array<boolean>) => {}
 }
 

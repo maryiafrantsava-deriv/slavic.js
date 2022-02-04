@@ -34,3 +34,5 @@ export const values_form_qr: Array<TValuesFormQR> = [
 ];
 
 export const req_fields_number = values_form_qr.filter(({isAdditional}) => isAdditional !== true).length;
+
+export const init_aditional_checked = new Array(values_form_qr.slice(req_fields_number).length).fill(false);

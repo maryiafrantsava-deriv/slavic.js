@@ -5,12 +5,12 @@ import type { AppProps } from "next/app";
 import QRContext from '../context/QRContext';
 import AddContext from '../context/AddContext';
 import { useState } from 'react';
+import { init_aditional_checked } from "../utils/values_form_qr";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const small_example_size = 4;
-  const default_additional_fields = [false, false, false, false, false];
   const [ example_size, setExampleSize ] = useState(small_example_size);
-  const [ additional_fields, setAdditionalFields ] = useState(default_additional_fields);
+  const [ additional_fields, setAdditionalFields ] = useState(init_aditional_checked);
   
   const value = { example_size, setExampleSize };
   const add_value = {additional_fields, setAdditionalFields};
