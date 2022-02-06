@@ -1,31 +1,32 @@
 import { FC, useState, useContext, useEffect } from "react";
 import ImageExample from "./ImageExample";
 import styles from "../../styles/SizeSelect.module.scss";
-import QRSizeContext from "../../context/Context";
+import QRContext from "../../context/QRContext";
 
 const SizeSelect: FC = () => {
     const [ demo_size, setDemoSize ] = useState(360);
-    const { example_size, setExampleSize } = useContext(QRSizeContext);
+    const { example_size, setExampleSize } = useContext(QRContext);
     const side_multiplier = 45;
+    const demo_size_result = side_multiplier * example_size;
 
     useEffect(() => {
-        setDemoSize(example_size * side_multiplier);
-    }, [example_size])
+        setDemoSize(demo_size_result);
+    }, [example_size, demo_size_result])
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const size = e.target.value;
 
         switch (size) {
             case "small":
-                setDemoSize(180)
+                setDemoSize(demo_size_result)
                 setExampleSize(4)
                 break;
             case "medium":
-                setDemoSize(270)
+                setDemoSize(demo_size_result)
                 setExampleSize(6)
                 break;
             case "large":
-                setDemoSize(360)
+                setDemoSize(demo_size_result)
                 setExampleSize(8)
                 break;
             default:

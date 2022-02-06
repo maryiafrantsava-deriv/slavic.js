@@ -17,6 +17,11 @@ export const initialValuesRegister = {
     state: "",
     country: "",
     website: "",
+    nickname: "",
+    birthday: "",
+    anniversary: "",
+    linkedIn: "",
+    github: ""
 }
 
 const testCard= {
