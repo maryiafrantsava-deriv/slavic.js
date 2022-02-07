@@ -10,6 +10,9 @@
             position: absolute;
             display: none; 
             background-color:rgba(0, 0, 0, 1.00);
+            z-index: 999;
+            border: 2px solid white;
+            border-radius: 0.5rem;
         }
 
         .overlay_container{
@@ -34,5 +37,17 @@
             vertical-align: middle; 
             max-height: 100%;
         }
+    }
+}
+@media (max-width: 820px) {
+    .animation_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .banner_canvas {
+        width: 88% !important;
+        height: auto !important;
     }
 }

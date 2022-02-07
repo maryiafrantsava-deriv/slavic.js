@@ -1,10 +1,3 @@
-/*
-name: qr-code-and-vcard
-version: 0.9.2
-author: Konstantin Nizhinskiy <konstantin.nizhinskiy@gmail.com>
-date: 2018-05-14 15:05:04 
-
-*/
 (function (root, factory) {
     if(typeof define === "function" && define.amd) {
         // the AMD loader.
@@ -133,29 +126,7 @@ var nl = function () {
     return '\r\n';
 };
 
-//---------------------------------------------------------------------
-//
-// QR Code Generator for JavaScript
-//
-// Copyright (c) 2009 Kazuhiko Arase
-//
-// URL: http://www.d-project.com/
-//
-// Licensed under the MIT license:
-//  http://www.opensource.org/licenses/mit-license.php
-//
-// The word 'QR Code' is registered trademark of
-// DENSO WAVE INCORPORATED
-//  http://www.denso-wave.com/qrcode/faqpatent-e.html
-//
-//---------------------------------------------------------------------
-
 var qrcode = function() {
-
-    //---------------------------------------------------------------------
-    // qrcode
-    //---------------------------------------------------------------------
-
     /**
      * qrcode
      * @param typeNumber 1 to 40
@@ -2256,7 +2227,7 @@ QrCode.prototype.createQr = function (options) {
     if(!options.margin){
         options.margin=options.cellSize*4;
     }
-    console.log(options)
+    
     var qr = qrcode(options.typeNumber, options.errorCorrectionLevel);
     qr.addData(options.data,options.mode);
     qr.make();

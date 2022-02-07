@@ -1,6 +1,14 @@
 @import "../../styles/colors.module";
 
-.btn-container{
+.containerRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+.btn-container {
     display: flex;
     justify-content: center;
 
@@ -36,7 +44,7 @@
 
     flex-wrap: wrap;
 
-    .helper-container{
+    .helper-container {
         display: flex;
         flex-flow: row wrap;
         max-width: 100%;
@@ -77,5 +85,20 @@
     display: flex;
     width: 10rem;
     padding-right: 1rem;
-    color: $black-color;
+    color: $white-color;
+}
+
+@media (max-width: 820px) {
+    .input-wrapper {
+        font-size: 25px;
+    }
+    .input-wrapper {
+        flex-flow: column;
+    }
+}
+
+@media (max-width: 1410px) {
+    .containerRight{
+        flex-direction: column-reverse;
+    }
 }
