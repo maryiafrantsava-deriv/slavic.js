@@ -6,6 +6,7 @@ import QRContext from '../context/QRContext';
 import AddContext from '../context/AddContext';
 import { useState } from 'react';
 import { init_aditional_checked } from "../utils/values_form_qr";
+import Background from '../components/Background';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const small_example_size = 4;
@@ -27,6 +28,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
                   </AddContext.Provider>
               </QRContext.Provider>
           </main>
+          <Background/>
       </Layout>
   );};
 

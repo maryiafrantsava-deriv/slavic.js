@@ -84,13 +84,10 @@ const FormQR: React.FC = React.memo(() => {
                     </div>
                 </Form>
             </Formik>
-            <DemoBanner/>
-            {isQRCodeReady ? (
-                <QRCodeRender
-                    dataQRcode={dataQRcode}
-                />
-                ): null
-            }
+            <div className={styles.containerRight}>
+                <DemoBanner/>
+                { isQRCodeReady ? ( <QRCodeRender dataQRcode={dataQRcode} /> ): null }
+            </div>
         </>
     );
 });
