@@ -4,7 +4,8 @@ import { MouseEventHandler } from 'react';
 const DarkMode = () => {
     const getDefaultChecked = () => {
       if (typeof window !== 'undefined') {
-        return localStorage.getItem('theme') === 'dark';
+        return (!localStorage.getItem('theme')) ? false : localStorage.getItem('theme') !== 'light';
+  
       }
     }
 
@@ -20,7 +21,7 @@ const DarkMode = () => {
 
     return (
       <div className={styles['toggle-theme-wrapper']}>
-        <span>☀️</span>
+        <span>🌒</span>
         <label className={styles['toggle-theme']} htmlFor='checkbox'>
           <input
             type='checkbox'
@@ -30,7 +31,7 @@ const DarkMode = () => {
           />
           <div className={styles['slider']}></div>
         </label>
-        <span>🌒</span>
+        <span>☀️</span>
       </div>
     );
   };
