@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import React, { useContext, useEffect, useState } from 'react';
-import { values_form_qr } from "../../utils/values_form_qr";
+import { values_form_qr, _workAddress, _socialUrls } from "../../utils/values_form_qr";
 import Button from "../common/Button";
 import { initialValuesRegister } from "./SchemaFormQR";
 import styles from "./FormQR.module.scss";
@@ -20,22 +20,24 @@ const FormQR: React.FC = React.memo(() => {
         const _register_data = localStorage.getItem("register_data");
         setDataQRcode(() => (_register_data === null ? "" : _register_data));
     }, []);
-    let tempisDoubleIdx: number;
+    let tempIsDoubleIdx: number;
     const fields = values_form_qr.map((item, idx) => {
-        const {id, common_label, label, maxLength, isDouble, isAdditional} = item;
+        const {id, name, common_label, label, maxLength, isDouble, isAdditional} = item;
         const add_field_index = idx - req_fields_number;
-
+        const isWorkAddress = name.startsWith("workAddress");
+        const isSocialUrls = name.startsWith("socialUrls");
         const showFields = () => !isAdditional ? true : additional_fields[add_field_index];
 
-        if (tempisDoubleIdx === idx) return;
+        if (tempIsDoubleIdx === idx) return;
         if(isDouble === true) {
-            tempisDoubleIdx = idx+1;
+            tempIsDoubleIdx = idx+1;
             return (
                 <div key={id} className={styles["input-wrapper"]}>
                     <p className={styles["helper-label"]}>{common_label}</p>
-                    <FormInput id={id} label={label} maxLength={maxLength} />
+                    <FormInput id={id} name={isWorkAddress? _workAddress[_workAddress.indexOf(name)] : id} label={label} maxLength={maxLength}/>
                     <FormInput
                         id={values_form_qr[idx + 1].id}
+                        name={isWorkAddress ? _workAddress[_workAddress.indexOf(name) + 1]: values_form_qr[idx + 1].id}
                         label={values_form_qr[idx + 1].label}
                         maxLength={values_form_qr[idx + 1].maxLength}
                     />
@@ -49,6 +51,7 @@ const FormQR: React.FC = React.memo(() => {
                             <p className={styles["helper-label"]}>{common_label}</p>
                             <FormInput
                                 id={id}
+                                name={isWorkAddress? _workAddress[_workAddress.indexOf(name)]: isSocialUrls? _socialUrls[_socialUrls.indexOf(name)] : id}
                                 label={label}
                                 maxLength={maxLength}
                             />

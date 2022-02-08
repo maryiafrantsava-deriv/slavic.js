@@ -14,7 +14,7 @@ const QRCodeRender = ({dataQRcode}: TDataQRcode) => {
     return (
         <div className={styles["qr-block"]}>
             <div>Here is your QR Code!</div>
-            <div dangerouslySetInnerHTML={{__html: qrCode.createVCardQr(dataQRcode, {typeNumber: 5, cellSize: example_size})}}></div>
+            <div dangerouslySetInnerHTML={{__html: qrCode.createVCardQr(dataQRcode, {typeNumber: 20, cellSize: example_size})}}></div>
         </div>
       );  
 }
