@@ -19,19 +19,19 @@ const SizeSelect: FC = () => {
         switch (size) {
             case "small":
                 setDemoSize(demo_size_result)
-                setExampleSize(4)
+                setExampleSize(2)
                 break;
             case "medium":
                 setDemoSize(demo_size_result)
-                setExampleSize(6)
+                setExampleSize(3)
                 break;
             case "large":
                 setDemoSize(demo_size_result)
-                setExampleSize(8)
+                setExampleSize(4)
                 break;
             default:
                 setDemoSize(180)
-                setExampleSize(4)
+                setExampleSize(3)
                 break;
         }
     }
@@ -44,9 +44,9 @@ const SizeSelect: FC = () => {
                     </div>
                 </div>
                 <div onChange={onChange}>
-                    <input type="radio" value="small" name="size" checked={example_size === 4} /> Small
-                    <input type="radio" value="medium" name="size" checked={example_size === 6} /> Medium
-                    <input type="radio" value="large" name="size" checked={example_size === 8} /> Large
+                    <input type="radio" value="small" name="size" checked={example_size === 2} /> Small
+                    <input type="radio" value="medium" name="size" checked={example_size === 3} /> Medium
+                    <input type="radio" value="large" name="size" checked={example_size === 4} /> Large
                 </div>
             </>
         );
