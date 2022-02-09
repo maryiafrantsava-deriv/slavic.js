@@ -13,25 +13,28 @@ const SizeSelect: FC = () => {
         setDemoSize(demo_size_result);
     }, [example_size, demo_size_result])
 
+
+    const updateSizeSettings = (demo_size: number, example_size: number) => {
+        setDemoSize(demo_size);
+        setExampleSize(example_size);
+        localStorage.setItem('example_size', example_size.toString());
+    }
+
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const size = e.target.value;
 
         switch (size) {
             case "small":
-                setDemoSize(demo_size_result)
-                setExampleSize(2)
+                updateSizeSettings(demo_size_result, 2)
                 break;
             case "medium":
-                setDemoSize(demo_size_result)
-                setExampleSize(3)
+                updateSizeSettings(demo_size_result, 3)
                 break;
             case "large":
-                setDemoSize(demo_size_result)
-                setExampleSize(4)
+                updateSizeSettings(demo_size_result, 4)
                 break;
             default:
-                setDemoSize(180)
-                setExampleSize(3)
+                updateSizeSettings(180, 3)
                 break;
         }
     }

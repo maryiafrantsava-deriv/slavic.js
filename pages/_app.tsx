@@ -5,16 +5,24 @@ import type { AppProps } from "next/app";
 import QRContext from '../context/QRContext';
 import AddContext from '../context/AddContext';
 import { useState } from 'react';
-import { init_aditional_checked } from "../utils/values_form_qr";
+import { init_aditional_checked, default_example_size } from "../utils/values_form_qr";
 import Background from '../components/Background';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const small_example_size = 4;
-  const [ example_size, setExampleSize ] = useState(small_example_size);
-  const [ additional_fields, setAdditionalFields ] = useState(init_aditional_checked);
-  
-  const value = { example_size, setExampleSize };
-  const add_value = {additional_fields, setAdditionalFields};
+    let saved_size;
+    let saved_fields;
+
+    if(typeof window !== "undefined") {
+        saved_size = parseInt(localStorage.getItem('example_size')!);
+        saved_fields = JSON.parse(localStorage.getItem('add_fields')!)
+     }
+
+    const qr_size = saved_size || default_example_size;
+    const enabled_fields = saved_fields || init_aditional_checked;
+    const [ example_size, setExampleSize ] = useState(qr_size);
+    const [ additional_fields, setAdditionalFields ] = useState(enabled_fields);
+    const value = { example_size, setExampleSize };
+    const add_value = { additional_fields, setAdditionalFields };
 
   return (
       <Layout>

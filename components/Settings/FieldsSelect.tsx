@@ -14,6 +14,7 @@ const FieldsSelect: FC = () => {
     const handleOnChange = (position: number) => {
         const updatedCheckedState = checkedState.map((item, index) => index === position ? !item : item);
 
+        localStorage.setItem('add_fields', JSON.stringify(updatedCheckedState))
         setCheckedState(updatedCheckedState);
         setAdditionalFields(updatedCheckedState);
         
