@@ -1,10 +1,14 @@
-
-.qr-code-container{
-    width: 400px;
-    height: 400px;
+.size-select{
+    width: 300px;
+    margin-bottom: 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
+    justify-content: space-between;
+    flex-direction: row;
+    font-size: 20px;
+}
+
+@media (max-width: 328px) {
+    .size-select {
+        flex-direction: column;
+    }
 }

@@ -11,6 +11,24 @@
 .btn-container {
     display: flex;
     justify-content: center;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: start;
+    column-gap: 1rem;
+
+    input[type=text] {
+        display: flex;
+        border-radius: 4px;
+        width: 15rem;
+        height: 40px;
+        padding: 0 12px;
+        border: solid 1px #d6dadb;
+        font-size: 14px;
+        line-height: 1.43;
+        color: $black-color;
+        margin: 0.5rem;
+    }
 
     .primary-btn-submit {
         cursor: pointer;
@@ -88,12 +106,22 @@
     color: $white-color;
 }
 
+.helper-light{
+    display: flex;
+    width: 10rem;
+    padding-right: 1rem;
+    color: $black-color;
+}
+
 @media (max-width: 820px) {
     .input-wrapper {
         font-size: 25px;
     }
     .input-wrapper {
         flex-flow: column;
+    }
+    .btn-container{
+        flex-direction: column;
     }
 }
 

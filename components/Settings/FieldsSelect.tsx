@@ -1,4 +1,5 @@
 import { FC, useState, useContext, useEffect } from "react";
+import styles from "../../styles/FieldsSelect.module.scss"
 import { values_form_qr } from "../../utils/values_form_qr";
 import AddContext from "../../context/AddContext";
 import { req_fields_number } from "../../utils/values_form_qr";
@@ -21,12 +22,12 @@ const FieldsSelect: FC = () => {
       };
 
     return (
-            <ul className="toppings-list">{
+            <ul className={styles["fields-list"]}>{
                 values_form_qr.map(({id, label, isAdditional}, i) => {
                     const add_field_index = i - req_fields_number;
 
                     return isAdditional ? (
-                        <li key={i}>
+                        <li className={styles["field-item"]} key={i}>
                             <div>
                                 <input
                                     type="checkbox"

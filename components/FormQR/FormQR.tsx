@@ -11,12 +11,15 @@ import FormInput from "./FormInput";
 import DemoBanner from "../DemoBanner";
 
 const FormQR: React.FC = React.memo(() => {
+    const [isLightTheme, checkIsLightTheme] = useState(false)
     const [dataQRcode, setDataQRcode] = useState({});
     const [isQRCodeReady, setQRCode] = useState(false);
     const { additional_fields } = useContext(AddContext);
 
+
     useEffect(() => {
-        // disable fields based on that array
+        // disable fields based on that array 
+        checkIsLightTheme(localStorage.getItem('theme') === 'light')        
         const _register_data = localStorage.getItem("register_data");
         setDataQRcode(() => (_register_data === null ? "" : _register_data));
     }, []);
@@ -26,14 +29,13 @@ const FormQR: React.FC = React.memo(() => {
         const add_field_index = idx - req_fields_number;
         const isWorkAddress = name.startsWith("workAddress");
         const isSocialUrls = name.startsWith("socialUrls");
-        const showFields = () => !isAdditional ? true : additional_fields[add_field_index];
 
         if (tempIsDoubleIdx === idx) return;
         if(isDouble === true) {
             tempIsDoubleIdx = idx+1;
             return (
                 <div key={id} className={styles["input-wrapper"]}>
-                    <p className={styles["helper-label"]}>{common_label}</p>
+                    <p className={isLightTheme ? styles["helper-label"] : styles["helper-light"]}>{common_label}</p>
                     <FormInput id={id} name={isWorkAddress? _workAddress[_workAddress.indexOf(name)] : id} label={label} maxLength={maxLength}/>
                     <FormInput
                         id={values_form_qr[idx + 1].id}
@@ -44,11 +46,12 @@ const FormQR: React.FC = React.memo(() => {
                 </div>
             );
         }else{
+            const showFields = () => isAdditional ? additional_fields[add_field_index] : true; 
             return (
                 <>
                     {showFields() && (
                         <div key={id} className={styles["input-wrapper"]}>
-                            <p className={styles["helper-label"]}>{common_label}</p>
+                            <p className={isLightTheme ? styles["helper-label"] : styles["helper-light"]}>{common_label}</p>
                             <FormInput
                                 id={id}
                                 name={isWorkAddress? _workAddress[_workAddress.indexOf(name)]: isSocialUrls? _socialUrls[_socialUrls.indexOf(name)] : id}
@@ -61,14 +64,13 @@ const FormQR: React.FC = React.memo(() => {
             );
         }
     });
-
     return (
         <>
             <Formik
                 initialValues={initialValuesRegister}
                 // validationSchema={SchemaQR}
-                onSubmit={async (values) => {
-                    await new Promise((r) => setTimeout(r, 500));
+                onSubmit={async values => {
+                    await new Promise(r => setTimeout(r, 500));
                     setQRCode(true);
                     // setInputListText(values);
                     setDataQRcode(values);
@@ -88,8 +90,8 @@ const FormQR: React.FC = React.memo(() => {
                 </Form>
             </Formik>
             <div className={styles.containerRight}>
-                <DemoBanner/>
-                { isQRCodeReady ? ( <QRCodeRender dataQRcode={dataQRcode} /> ): null }
+                <DemoBanner />
+                {isQRCodeReady ? <QRCodeRender dataQRcode={dataQRcode} /> : null}
             </div>
         </>
     );
