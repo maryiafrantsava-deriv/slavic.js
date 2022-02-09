@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import React, { useContext, useEffect, useState } from 'react';
 import { values_form_qr, _workAddress, _socialUrls } from "../../utils/values_form_qr";
 import Button from "../common/Button";
-import { initialValuesRegister } from "./SchemaFormQR";
+import { initialValuesRegister, SchemaQR } from "./SchemaFormQR";
 import styles from "./FormQR.module.scss";
 import QRCodeRender from "../QrCodeRender";
 import AddContext from "../../context/AddContext";
@@ -68,11 +68,10 @@ const FormQR: React.FC = React.memo(() => {
         <>
             <Formik
                 initialValues={initialValuesRegister}
-                // validationSchema={SchemaQR}
+                validationSchema={SchemaQR}
                 onSubmit={async values => {
                     await new Promise(r => setTimeout(r, 500));
                     setQRCode(true);
-                    // setInputListText(values);
                     setDataQRcode(values);
                     localStorage.setItem("data", JSON.stringify(values, null, 2));
                 }}
