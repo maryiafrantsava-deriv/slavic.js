@@ -28,9 +28,9 @@ export const values_form_qr: Array<TValuesFormQR> = [
     { num: 13, id: "workUrl", name: "workUrl", common_label: "Website:", label: "www.your-website.com", maxLength: 255, isDouble: false},
     // additional fields
     { num: 14, id: "nickname", name: "nickname", common_label: "Nickname:", label: "Nickname", maxLength: 255, isDouble: false, isAdditional: true},
-    { num: 15, id: "birthday", name: "birthday", common_label: "Birthday", label: "Birthday", maxLength: 255, isDouble: false, isAdditional: true},
+    { num: 15, id: "birthday", name: "birthday", common_label: "Birthday:", label: "Birthday", maxLength: 255, isDouble: false, isAdditional: true},
     { num: 16, id: "linkedIn", name: "socialUrls.linkedIn", common_label: "LinkedIn:", label: "LinkedIn", maxLength: 255, isDouble: false, isAdditional: true},
-    { num: 17, id: "github", name: "socialUrls.github", common_label: "Github", label: "Github", maxLength: 255, isDouble: false, isAdditional: true},
+    { num: 17, id: "github", name: "socialUrls.github", common_label: "Github:", label: "Github", maxLength: 255, isDouble: false, isAdditional: true},
 ];
 
 export const req_fields_number = values_form_qr.filter(({isAdditional}) => isAdditional !== true).length;
