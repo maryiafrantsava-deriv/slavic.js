@@ -3,7 +3,7 @@ import { FC } from "react";
 
 const Footer: FC = () => (
     <footer>
-        <Heading tag="h3" text="Created by: Nikita Maryia Adam"/>
+        <Heading tag="h3" text="Created by: Nikita Maryia"/>
     </footer>
 );
   

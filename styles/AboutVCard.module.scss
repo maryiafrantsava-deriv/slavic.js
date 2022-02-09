@@ -1,0 +1,37 @@
+.containerAboutVCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 3rem;
+    align-items: self-start;
+
+    &_content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+.optionsVCard {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(73 63 64);
+    border-radius: 0.5rem;
+
+    &_value {
+        margin: 0.5rem;
+    }
+}
+.containerAboutVCardFirst, .containerAboutVCardSecond {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+@media (max-width: 820px) {
+    .containerAboutVCard {
+        flex-direction: column;
+    }
+}
