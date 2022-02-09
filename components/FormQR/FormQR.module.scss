@@ -17,7 +17,7 @@
     justify-content: start;
     column-gap: 1rem;
 
-    input[type=text] {
+    input[type=text], input[type=date] {
         display: flex;
         border-radius: 4px;
         width: 15rem;
