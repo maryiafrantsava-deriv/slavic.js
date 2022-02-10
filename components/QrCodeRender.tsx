@@ -10,7 +10,6 @@ type TDataQRcode = {
 
 const QRCodeRender = ({dataQRcode}: TDataQRcode) => {
     const { example_size } = useContext(QRContext);
-
     return (
         <div className={styles["qr-block"]}>
             <div>Here is your QR Code!</div>
@@ -20,4 +19,3 @@ const QRCodeRender = ({dataQRcode}: TDataQRcode) => {
 }
 
 export default QRCodeRender;
-

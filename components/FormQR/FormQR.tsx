@@ -11,6 +11,7 @@ import FormInput from "./FormInput";
 import DemoBanner from "../DemoBanner";
 
 const FormQR: React.FC = React.memo(() => {
+    const [mounted, setMounted] = useState(false);
     const [isLightTheme, checkIsLightTheme] = useState(false)
     const [dataQRcode, setDataQRcode] = useState({});
     const [isQRCodeReady, setQRCode] = useState(false);
@@ -18,6 +19,7 @@ const FormQR: React.FC = React.memo(() => {
 
     useEffect(() => {
         // disable fields based on that array 
+        setMounted(true)
         checkIsLightTheme(localStorage.getItem('theme') === 'light')        
         const _register_data = localStorage.getItem("register_data");
         setDataQRcode(() => (_register_data === null ? "" : _register_data));
@@ -67,34 +69,39 @@ const FormQR: React.FC = React.memo(() => {
     });
     return (
         <>
-            <Formik
-                initialValues={initialValuesRegister}
-                validationSchema={SchemaQR}
-                onSubmit={async values => {
-                    await new Promise(r => setTimeout(r, 500));
-                    setQRCode(true);
-                    setDataQRcode(values);
-                    localStorage.setItem("data", JSON.stringify(values, null, 2));
-                }}
-            >
-                <Form>
-                    {fields}
-                    <div className={styles["btn-container"]}>
-                        <Button
-                            id="btnRegister"
-                            className={styles["primary-btn-submit"]}
-                            text={"Generate QR code"}
-                            type="submit"
-                        />
+            {mounted && (
+                <>
+                    <Formik
+                        initialValues={initialValuesRegister}
+                        validationSchema={SchemaQR}
+                        onSubmit={async values => {
+                            await new Promise(r => setTimeout(r, 500));
+                            setQRCode(true);
+                            setDataQRcode(values);
+                            localStorage.setItem("data", JSON.stringify(values, null, 2));
+                        }}
+                    >
+                        <Form>
+                            {fields}
+                            <div className={styles["btn-container"]}>
+                                <Button
+                                    id="btnRegister"
+                                    className={styles["primary-btn-submit"]}
+                                    text={"Generate QR code"}
+                                    type="submit"
+                                />
+                            </div>
+                        </Form>
+                    </Formik>
+                    <div className={styles.containerRight}>
+                        <DemoBanner />
+                        {isQRCodeReady ? <QRCodeRender dataQRcode={dataQRcode} /> : null}
                     </div>
-                </Form>
-            </Formik>
-            <div className={styles.containerRight}>
-                <DemoBanner />
-                {isQRCodeReady ? <QRCodeRender dataQRcode={dataQRcode} /> : null}
-            </div>
+                </>
+            )}
         </>
-    );
+    )
+        
 });
 
 FormQR.displayName = "FormQR";

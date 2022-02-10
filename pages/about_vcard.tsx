@@ -1,10 +1,12 @@
 import Head from "next/head";
+import { useContext } from "react";
 import { FC } from "react";
+import ThemeContext from "../context/ThemeContext";
 import styles from '../styles/AboutVCard.module.scss';
 import { options_qr, about_vcard_qr } from "../utils/options_qr";
 
 const AboutVCard:FC = () => {
-
+  const { active_theme } = useContext(ThemeContext);
     const options = options_qr.map((item) => {
         return (
             <div key={item.id}>
@@ -28,7 +30,12 @@ const AboutVCard:FC = () => {
             </div>
             <div className={styles.containerAboutVCardSecond}>
                 <p>Options VCard: </p>
-                <div className={styles.optionsVCard}>
+                <div 
+                    className={
+                          active_theme === "light"
+                              ? `${styles.optionsVCard} ${styles.containerAboutDark}`
+                              : `${styles.optionsVCard} ${styles.containerAboutLight}`
+                    }>
                     <code>
                         {options}
                     </code>

@@ -1,4 +1,5 @@
 @import "mixins";
+@import "colors.module";
 
 .containerAboutVCard {
     @include block-alignment-center;
@@ -18,10 +19,21 @@
     background-color: rgb(73 63 64);
     border-radius: 0.5rem;
 
+    code {
+        padding: 0.5rem;
+    }
+
     &_value {
         margin: 0.5rem;
     }
 }
+.containerAboutDark{
+    color: $white-color;
+}
+.containerAboutLight{
+    color: $white-color;
+}
+
 .containerAboutVCardFirst, .containerAboutVCardSecond {
     @include block-alignment-center;
     align-items: center;

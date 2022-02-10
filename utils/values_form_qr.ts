@@ -39,6 +39,8 @@ export const init_aditional_checked = new Array(values_form_qr.slice(req_fields_
 
 export const default_example_size = 3;
 
+export const default_theme = "light";
+
 export const _workAddress = [ 
     "workAddress.city", 
     "workAddress.postalCode",

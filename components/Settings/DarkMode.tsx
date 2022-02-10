@@ -1,7 +1,10 @@
 import styles from '../../styles/DarkMode.module.scss';
-import { MouseEventHandler } from 'react';
+import { MouseEventHandler, useContext } from 'react';
+import ThemeContext from '../../context/ThemeContext';
 
 const DarkMode = () => {
+    const { setActiveTheme, active_theme } = useContext(ThemeContext);
+
     const getDefaultChecked = () => {
       if (typeof window !== 'undefined') {
         return (!localStorage.getItem('theme')) ? false : localStorage.getItem('theme') !== 'light';
@@ -11,6 +14,7 @@ const DarkMode = () => {
 
     const setTheme = (theme: string) => {
       localStorage.setItem('theme', theme);
+      setActiveTheme(theme);
       document.documentElement.setAttribute('data-theme', theme);
     }
     

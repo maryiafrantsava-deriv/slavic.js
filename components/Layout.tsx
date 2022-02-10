@@ -1,5 +1,5 @@
 
-import { FC, ReactNode, useEffect, useState } from 'react';
+import { FC, ReactNode, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
