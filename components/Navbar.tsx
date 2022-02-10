@@ -15,7 +15,14 @@ const Navbar:FC = () => {
     return (
         <nav className={styles.nav}>
             <div className={styles.logo}>
-                <Image src="/logo.svg" width={60} height={60} alt="VCard logo"/>
+                <Image 
+                    src="/images/logo.png" 
+                    width={120} 
+                    height={60} 
+                    alt="VCard logo" 
+                    placeholder="blur" 
+                    blurDataURL="logo"
+                />
             </div>
             <div className={styles.links}>
                 {navigation.map(({id, title, path}) => (
