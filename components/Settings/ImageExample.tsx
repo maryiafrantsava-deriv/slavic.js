@@ -1,7 +1,5 @@
-import { FC, useState } from "react";
-import qrCodeExample from '../../images/qr-code-example.jpeg' 
+import { FC } from "react";
 import Image from "next/image";
-
 interface ImageExapleType  {
     width: string; 
     height: string;
@@ -10,9 +8,8 @@ interface ImageExapleType  {
 
 const ImageExample: FC<ImageExapleType> = ({width, height}) => {
     return (
-
             <Image 
-                src={qrCodeExample}  
+                src="/images/qr-code-example.jpeg"   
                 width={width} 
                 height={height}
                 alt="qr-code-example" 

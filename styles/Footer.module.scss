@@ -7,3 +7,40 @@
 .footer-light {
     color: $white-color;
 }
+.mainContainerDevelopers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+
+    .containerDeveloper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 1rem;
+    
+        span {
+            overflow: visible !important;
+        }
+    
+        &_image {
+            border-radius: 100%;
+            -moz-transition: all 1s ease-out;
+            -o-transition: all 1s ease-out;
+            -webkit-transition: all 1s ease-out;
+    
+        }
+        &_image:hover {
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -o-transform: scale(1.1);
+        }
+    }
+}
+
+@media (max-width: 460px) {
+    .mainContainerDevelopers {
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+}
