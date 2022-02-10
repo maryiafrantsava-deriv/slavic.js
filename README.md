@@ -17,8 +17,9 @@
 ### Features:
 - Form for generation QR code of VCard contact
 - Validation of fields
-- ***Canvas-animation*** with interactive button as a main unique feature for watching the demo how to use current application. Canvas was created using keyframes and using a special design created in Adobe Photoshop.
+- ***Canvas-animation*** with interactive button as a main unique feature for watching the demo how to use current application. Canvas was created using keyframes and using a special design created in Adobe Photoshop
 - The background which generating with help JavaScript
+- Settings with ability to add additional fields for QR code generation, ability to choose the theme of application and QR code size
 - Responsive layouting
 - The application is made in the same style
 - The application works on as desktop as and mobile or tablet
