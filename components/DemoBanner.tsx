@@ -22,7 +22,7 @@ return (
                 <canvas id="canvas" width="550" height="400" className={styles["banner_canvas"]}/>
                 <div id="overlay_container" className={styles["overlay_container"]}/>
                 <div id='preloader-container' className={styles["preloader-container"]}>	
-                    <Image src={preloader} className={styles["preloader-container_spinner"]} />
+                    <Image src={preloader} className={styles["preloader-container_spinner"]} alt="preloader"/>
                 </div>
             </div>
         </div>

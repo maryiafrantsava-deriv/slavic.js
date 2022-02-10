@@ -1,4 +1,4 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form } from "formik";
 import React, { useContext, useEffect, useState } from 'react';
 import { values_form_qr, _workAddress, _socialUrls } from "../../utils/values_form_qr";
 import Button from "../common/Button";
@@ -16,14 +16,15 @@ const FormQR: React.FC = React.memo(() => {
     const [isQRCodeReady, setQRCode] = useState(false);
     const { additional_fields } = useContext(AddContext);
 
-
     useEffect(() => {
         // disable fields based on that array 
         checkIsLightTheme(localStorage.getItem('theme') === 'light')        
         const _register_data = localStorage.getItem("register_data");
         setDataQRcode(() => (_register_data === null ? "" : _register_data));
     }, []);
+
     let tempIsDoubleIdx: number;
+
     const fields = values_form_qr.map((item, idx) => {
         const {id, name, common_label, label, maxLength, isDouble, isAdditional} = item;
         const add_field_index = idx - req_fields_number;
