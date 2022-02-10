@@ -27,7 +27,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
       <Layout>
           <Head>
-              <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
+              <title>QR сode contact generator</title>
+                <meta
+                    name="description"
+                    content="This implementation allows you to generate QR code and create vCard contact."
+                />
           </Head>
           <main>
               <QRContext.Provider value={value}>

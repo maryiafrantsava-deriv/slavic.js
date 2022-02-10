@@ -1,20 +1,19 @@
 @import "../../styles/colors.module";
+@import "../../styles/_mixins";
 
 .containerRight {
-    display: flex;
-    justify-content: center;
+    @include block-alignment-center;
     align-items: center;
     flex-direction: column;
     row-gap: 2rem;
 }
 
 .btn-container {
-    display: flex;
-    justify-content: center;
+    @include block-alignment-center;
     width: 100%;
     align-items: center;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     column-gap: 1rem;
 
     input[type=text], input[type=date] {
@@ -23,7 +22,7 @@
         width: 15rem;
         height: 40px;
         padding: 0 12px;
-        border: solid 1px #d6dadb;
+        border: solid 1px $light-grey-color;
         font-size: 14px;
         line-height: 1.43;
         color: $black-color;
@@ -38,16 +37,16 @@
         line-height: 1.43;
         letter-spacing: normal;
         text-align: center;
-        color: #fff;
+        color: $white-color;
         font-size: 14px;
         border-radius: 4px;
         border: none;
-        background-color: #ff444f;
+        background-color: $red-color;
         margin: 40px auto;
         font-weight: 700;
         
         &:hover {
-            background-color: #d43e47;
+            background-color: $red-color-2;
         }
     }
     .helper-container {
@@ -71,7 +70,7 @@
     width: 100%;
     align-items: center;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     column-gap: 1rem;
 
     flex-wrap: wrap;
@@ -88,7 +87,7 @@
             width: 15rem;
             height: 40px;
             padding: 0 12px;
-            border: solid 1px #d6dadb;
+            border: solid 1px $light-grey-color;
             font-size: 14px;
             line-height: 1.43;
             color: $black-color;
