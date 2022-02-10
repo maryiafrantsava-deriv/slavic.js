@@ -9,7 +9,7 @@ const Footer: FC = () => {
 
     return (
     <footer className={active_theme === 'light' ? styles["footer-text"] : styles["footer-light"]}>
-        <Heading tag="h3" text="Created by: Nikita Maryia"/>
+        <Heading tag="h2" text="Created by: Nikita Maryia"/>
     </footer>
 )};
   

@@ -70,7 +70,7 @@ const FormQR: React.FC = React.memo(() => {
     return (
         <>
             {mounted && (
-                <div>
+                <>
                     <Formik
                         initialValues={initialValuesRegister}
                         validationSchema={SchemaQR}
@@ -97,10 +97,10 @@ const FormQR: React.FC = React.memo(() => {
                         <DemoBanner />
                         {isQRCodeReady ? <QRCodeRender dataQRcode={dataQRcode} /> : null}
                     </div>
-                </div>
-            )};
+                </>
+            )}
         </>
-    );
+    )
         
 });
 

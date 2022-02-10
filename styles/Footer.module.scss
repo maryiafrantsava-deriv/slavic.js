@@ -1,7 +1,9 @@
-.footer-text{
-    color:  red;   
+@import "colors.module";
+
+.footer-text {
+    color:  $red-color-1;   
 }
 
-.footer-light{
-    color: white;
+.footer-light {
+    color: $white-color;
 }
