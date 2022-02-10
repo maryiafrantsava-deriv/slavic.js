@@ -1,6 +1,5 @@
 # QR сode contact generator
-  ![Screenshot 2022-02-10 at 13 36 24](https://user-images.githubusercontent.com/88426229/153390024-8ef1fcf9-675c-4864-93db-8ad847949a52.png)
-
+  ![Screenshot 2022-02-11 at 00 43 34](https://user-images.githubusercontent.com/88426229/153501745-802562f4-2a00-414b-ad58-10c557f8ab65.png)
   Deploy: https://slavic-js.vercel.app/
   Done 10.02.2022
 
