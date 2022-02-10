@@ -32,25 +32,27 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     const add_value = { additional_fields, setAdditionalFields };
     const theme_value = { active_theme, setActiveTheme };
 
-  return (
-      <ThemeContext.Provider value={theme_value}>
-          <Layout>
-              <Head>
-                  <link
-                      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
-                      rel="stylesheet"
-                  />
-              </Head>
-              <main>
-                  <QRContext.Provider value={value}>
-                      <AddContext.Provider value={add_value}>
-                          <Component {...pageProps} />
-                      </AddContext.Provider>
-                  </QRContext.Provider>
-              </main>
-              <Background />
-          </Layout>
-      </ThemeContext.Provider>
-  );};
+    return (
+        <ThemeContext.Provider value={theme_value}>
+            <Layout>
+                <Head>
+                    <title>QR сode contact generator</title>
+                    <meta
+                        name="description"
+                        content="This implementation allows you to generate QR code and create vCard contact."
+                    />
+                </Head>
+                <main>
+                    <QRContext.Provider value={value}>
+                        <AddContext.Provider value={add_value}>
+                            <Component {...pageProps} />
+                        </AddContext.Provider>
+                    </QRContext.Provider>
+                </main>
+                <Background/>
+            </Layout>
+        </ThemeContext.Provider>
+    );
+};
 
 export default MyApp;

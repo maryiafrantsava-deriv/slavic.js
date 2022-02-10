@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import { useState, FC } from 'react';
+import { FC } from 'react';
 import Form from '../components/FormQR/FormQR';
 import styles from '../styles/VCard.module.scss';
 
-const VCard = () => (
+const VCard: FC = () => (
     <div className={styles.wrapper}>
         <Head>
             <title>VCARD</title>

@@ -1,20 +1,19 @@
+@import "mixins";
+
 .containerAboutVCard {
-    display: flex;
-    justify-content: center;
+    @include block-alignment-center;
     align-items: center;
     flex-direction: row;
     column-gap: 3rem;
     align-items: self-start;
 
     &_content {
-        display: flex;
-        justify-content: center;
+        @include block-alignment-center;
         flex-direction: column;
     }
 }
 .optionsVCard {
-    display: flex;
-    justify-content: center;
+    @include block-alignment-center;
     flex-direction: column;
     background-color: rgb(73 63 64);
     border-radius: 0.5rem;
@@ -31,8 +30,7 @@
 }
 
 .containerAboutVCardFirst, .containerAboutVCardSecond {
-    display: flex;
-    justify-content: center;
+    @include block-alignment-center;
     align-items: center;
     flex-direction: column; 
 }

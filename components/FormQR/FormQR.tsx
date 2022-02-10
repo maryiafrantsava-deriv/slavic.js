@@ -24,7 +24,9 @@ const FormQR: React.FC = React.memo(() => {
         const _register_data = localStorage.getItem("register_data");
         setDataQRcode(() => (_register_data === null ? "" : _register_data));
     }, []);
+
     let tempIsDoubleIdx: number;
+
     const fields = values_form_qr.map((item, idx) => {
         const {id, name, common_label, label, maxLength, isDouble, isAdditional} = item;
         const add_field_index = idx - req_fields_number;
