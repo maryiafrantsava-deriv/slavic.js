@@ -32,22 +32,6 @@ const AboutVCard:FC = () => {
                               : `${styles.optionsVCard} ${styles.containerAboutLight}`
                       }
                   >
-                      <p className={styles.optionsVCard_value}>version: '3.0',</p>
-                      <p className={styles.optionsVCard_value}>lastName: string,</p>
-                      <p className={styles.optionsVCard_value}>firstName: string,</p>
-                      <p className={styles.optionsVCard_value}>nickname: string,</p>
-                      <p className={styles.optionsVCard_value}>organization: string as company,</p>
-                      <p className={styles.optionsVCard_value}>workPhone: string as phone,</p>
-                      <p className={styles.optionsVCard_value}>homePhone: string as mobile,</p>
-                      <p className={styles.optionsVCard_value}>workFax: string as fax,</p>
-                      <p className={styles.optionsVCard_value}>birthday: string,</p>
-                      <p className={styles.optionsVCard_value}>title: string as your job,</p>
-                      <p className={styles.optionsVCard_value}>workEmail: string as email,</p>
-                      <p className={styles.optionsVCard_value}>workUrl: string as website,</p>
-                      <p className={styles.optionsVCard_value}>
-                          workAddress: object as city, zip, state, country, street,
-                      </p>
-                      <p className={styles.optionsVCard_value}>socialUrls: object as linkedIn and github</p>
                   </div>
               </div>
           </div>
