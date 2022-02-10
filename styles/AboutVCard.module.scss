@@ -1,4 +1,4 @@
-@import "./styles/mixins.module.scss";
+@import "mixins";
 
 .containerAboutVCard {
     @include block-alignment-center;

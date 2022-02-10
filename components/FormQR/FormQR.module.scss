@@ -1,5 +1,5 @@
 @import "../../styles/colors.module";
-@import "../../styles/mixins.module";
+@import "../../styles/_mixins";
 
 .containerRight {
     @include block-alignment-center;
