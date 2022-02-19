@@ -41,6 +41,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
                         name="description"
                         content="This implementation allows you to generate QR code and create vCard contact."
                     />
+                    <meta name="viewport" content="width=device-width, user-scalable=no"/>
                 </Head>
                 <main>
                     <QRContext.Provider value={value}>

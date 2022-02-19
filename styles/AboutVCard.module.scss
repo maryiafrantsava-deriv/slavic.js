@@ -16,7 +16,7 @@
 .optionsVCard {
     @include block-alignment-center;
     flex-direction: column;
-    background-color: rgb(73 63 64);
+    background-color: $black-color-3;
     border-radius: 0.5rem;
 
     code {

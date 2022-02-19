@@ -1,13 +1,14 @@
 @import "colors.module";
 
 .footer-text {
-    color:  $red-color-1;   
+    color:  $red-color;   
 }
 
 .footer-light {
     color: $white-color;
 }
-.mainContainerDevelopers{
+
+.mainContainerDevelopers {
     display: flex;
     justify-content: space-between;
     align-items: center;

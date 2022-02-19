@@ -1,7 +1,12 @@
-.qr-block{
+.qr-block {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-direction: column;
     row-gap: 1rem;
+    align-items: center;
+
+    &-qrcode img {
+        width: 17rem !important;
+        height: 17rem !important;
+    }
 }

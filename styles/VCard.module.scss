@@ -1,8 +1,9 @@
-.wrapper{
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
+@import "mixins";
+
+.wrapper {
+    @include block-alignment-center;
+    flex-flow: wrap;
     align-items: flex-start;
     column-gap: 3rem;
-    flex-flow: wrap;
+    min-height: 100%;
 }
