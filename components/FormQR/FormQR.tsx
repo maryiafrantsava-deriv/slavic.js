@@ -6,6 +6,7 @@ import { initialValuesRegister, SchemaQR } from "./SchemaFormQR";
 import styles from "./FormQR.module.scss";
 import QRCodeRender from "../QrCodeRender";
 import AddContext from "../../context/AddContext";
+import ThemeContext from "../../context/ThemeContext";
 import { req_fields_number } from "../../utils/values_form_qr";
 import FormInput from "./FormInput";
 import DemoBanner from "../DemoBanner";
@@ -16,11 +17,12 @@ const FormQR: React.FC = React.memo(() => {
     const [dataQRcode, setDataQRcode] = useState({});
     const [isQRCodeReady, setQRCode] = useState(false);
     const { additional_fields } = useContext(AddContext);
+    const { active_theme } = useContext(ThemeContext);
 
     useEffect(() => {
         // disable fields based on that array 
         setMounted(true)
-        checkIsLightTheme(localStorage.getItem('theme') === 'light')        
+        checkIsLightTheme(localStorage.getItem('theme') === 'light' || active_theme === 'light')        
         const _register_data = localStorage.getItem("register_data");
         setDataQRcode(() => (_register_data === null ? "" : _register_data));
     }, []);
