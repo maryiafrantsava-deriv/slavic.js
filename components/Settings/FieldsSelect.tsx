@@ -27,7 +27,7 @@ const FieldsSelect: FC = () => {
                     const add_field_index = i - req_fields_number;
 
                     return isAdditional ? (
-                        <li className={styles["field-item"]} key={i}>
+                        <li className={styles["fields-list-item"]} key={i}>
                             <div>
                                 <input
                                     type="checkbox"

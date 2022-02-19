@@ -1,8 +1,11 @@
+@import "mixins";
+@import "colors.module";
+
 .banner-container{
-    margin:0px;
+    margin: 0px;
 
     .animation_container{
-        border: 0px solid white;
+        border: 0px solid $white-color;
         border-radius: 0.5rem;
         width: 550px; 
         height: 400px;
@@ -10,9 +13,9 @@
         .banner_canvas{
             position: absolute;
             display: none; 
-            background-color:rgba(0, 0, 0, 1.00);
+            background-color: $black-color-4;
             z-index: 999;
-            border: 2px solid white;
+            border: 2px solid $white-color;
             border-radius: 0.5rem;
         }
 
@@ -42,9 +45,8 @@
 }
 @media (max-width: 660px) {
     .animation_container {
-        display: flex;
+        @include block-alignment-center;
         align-items: center;
-        justify-content: center;
     }
 
     .banner_canvas {

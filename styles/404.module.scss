@@ -1,7 +1,8 @@
+@import "mixins";
+
 .wrapper {
     min-height: 100%;
-    display: flex;
-    justify-content: center;
+    @include block-alignment-center;
     align-items: center;
     text-align: center;
-  }
+}

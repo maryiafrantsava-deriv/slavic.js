@@ -46,7 +46,7 @@
         font-weight: 700;
         
         &:hover {
-            background-color: $red-color-2;
+            background-color: $red-color-1;
         }
     }
     .helper-container {
@@ -97,7 +97,7 @@
         .text-danger {
             position: absolute;
             z-index: 999;
-            top: 3.3rem;
+            top: 2.6rem;
             color: $white-color;
             font-size: 14px;
             left: 1rem;

@@ -1,14 +1,44 @@
-.size-select{
+@import "mixins";
+
+.containerSelectSize {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.size-select {
     width: 300px;
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    align-items: center;
     font-size: 20px;
 }
 
-@media (max-width: 328px) {
-    .size-select {
-        flex-direction: column;
+.qr-code-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+    height: 15rem;
+    width: 15rem;
+    margin: 1rem;
+
+    .containerQR {
+        @include block-alignment-center;
+        img {
+            display: initial !important;
+        }
+    }
+}
+
+@media (max-width: 660px) {
+    .containerSelectSize {
+        align-items: center;
+    }
+    .qr-code-container {
+        height: 75vw;
+        width: 75vw;
     }
 }
