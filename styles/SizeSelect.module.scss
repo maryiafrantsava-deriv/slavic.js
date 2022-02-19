@@ -3,7 +3,7 @@
 .containerSelectSize {
     display: flex;
     flex-flow: column;
-    justify-content: flex-start;
+    align-items: center;
 }
 
 .size-select {
@@ -17,13 +17,24 @@
 }
 
 .qr-code-container {
-    @include block-alignment-center;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    height: 14rem;
+    height: 15vw;
+    width: 15vw;
     margin: 1rem;
-    width: 14rem;
 
     .containerQR {
         @include block-alignment-center;
+    }
+}
+
+@media (max-width: 660px) {
+    .containerSelectSize {
+        align-items: center;
+    }
+    .qr-code-container {
+        height: 75vw;
+        width: 75vw;
     }
 }
