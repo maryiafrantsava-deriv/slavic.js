@@ -20,12 +20,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15vw;
-    width: 15vw;
+    min-height: auto;
+    height: 15rem;
+    width: 15rem;
     margin: 1rem;
 
     .containerQR {
         @include block-alignment-center;
+        img {
+            display: initial !important;
+        }
     }
 }
 
